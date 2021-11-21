@@ -32,11 +32,20 @@ li.nav-li{
     display: inline;
     margin: 0 20px;
     font-family: 'Barlow', sans-serif;
-    color:whitesmoke;
+   
    
     font-size: 18px;
 }
     
+li.nav-li a{
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+li.contact a{
+    color:#23303E;
+}
+
 
 
 li.contact{
@@ -83,8 +92,14 @@ h1{
 .main-grid{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     
+}
+
+.fruits{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
 }
 
 h2, h3{
@@ -180,14 +195,14 @@ button::after {
     background-image: url("./images/desktop/image-transform.jpg");
     background-position: center;
     background-repeat: no-repeat; 
-    background-size: 100% 100%; 
+    background-size: cover; 
 }
 
 .cup{
     background-image: url("./images/desktop/image-stand-out.jpg");
     background-position: center;
     background-repeat: no-repeat; 
-    background-size: 100% 100%; 
+    background-size: cover; 
 }
 .cherry{
     background-image: url("./images/desktop/image-graphic-design.jpg");
@@ -281,7 +296,13 @@ li.footer-li{
     font-family: 'Barlow', sans-serif;
     color:hsl(167, 40%, 24%);
         padding:  0 50px;
-    font-size: 18px;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+}
+li.footer-li a{
+    text-decoration: none;
+    color:hsl(167, 40%, 24%);
 }
     
 
@@ -307,7 +328,7 @@ li.contact:hover{
     background-color: #50CEFF;
 }
 
-.nav-li:hover{
+.nav-li a:hover{
     color:#23303E;
     cursor: pointer;
 }
@@ -315,12 +336,13 @@ li.contact:hover{
 .footer-svg-ul{
     margin: 0;
 }
-li.footer-svg-li:hover{
-      fill: white;
+
+li.footer-svg-li a :hover{
+      fill:  white;
       cursor: pointer;
 }
 
-.footer-li:hover{
+.footer-li a:hover{
     color: white;
     cursor: pointer;
 
@@ -329,6 +351,8 @@ li.footer-svg-li:hover{
 .hamburger{
     cursor: pointer;
 }
+
+
 
 
 @media only screen and (min-width:360px ) and (max-width:750px){
@@ -347,7 +371,7 @@ h1{
 .main-grid{
     display:grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 350px);
+    grid-template-rows: repeat(4, 350px);
     
 }
 
@@ -394,7 +418,7 @@ ul.footer-ul{
 }
 
 .footer-svg-ul{
-    padding: 75px;
+    padding: 73px;
 }
 
 .egg{
@@ -469,29 +493,21 @@ div.content2 p {
     background-image: url("./images/mobile/image-transform.jpg");
     background-position: center;
     background-repeat: no-repeat; 
-    background-size: 100% 100%; 
+    background-size: cover; 
 }
 
 .cup{
     background-image: url("./images/mobile/image-stand-out.jpg");
     background-position: center;
     background-repeat: no-repeat; 
-    background-size: 100% 100%; 
-}
-.cherry{
-    background-image: url("./images/mobile/image-graphic-design.jpg");
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: 100% 100%; 
+    background-size: cover; 
 }
 
-.orange{
-    background-image: url("./images/mobile/image-photography.jpg");
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: 100% 100%;  
+.fruits{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:repeat(2, 350px);
 }
-
 
 
 }
@@ -507,13 +523,22 @@ div.content2 p {
 
 li.nav-li{
     display:block;
-   color: hsl(210, 4%, 67%);
+   
    margin: 35px;
 
 }
 
-li.contact{
+li.nav-li a{
+    text-decoration: none;
+   color:hsl(210, 4%, 67%);
+}
+
+li.contact a{
     color:#23303E;
+}
+
+li.contact{
+    
     background-color: darkorange;
 }
 
@@ -521,12 +546,31 @@ ul.nav-ul{
     list-style-type:none;
     margin: 40px;
     padding:0;
-    width: 100%;
+    width: 80%;
     background-color:white;
+    z-index: 1;
+    position: absolute;
+    top:60px;
+
+    
+}
+ul.nav-ul::before{
+    content: " ";
+    position: absolute;
+    width: 0;
+     height: 0;
+    border-bottom: 35px solid white;
+    border-left: 38px solid transparent;
+    border-right: 0px solid transparent;
+    top: -32px;
+  
+    right: 0px;
+
 }
 
 ul.nav-ul.active {
     display:block;
+  
 }
 ul.nav-ul{
     display: none;
